@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ScrollViewTests" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +18,52 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sky" translatesAutoresizingMaskIntoConstraints="NO" id="bDH-Xx-EMY"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sun" translatesAutoresizingMaskIntoConstraints="NO" id="mJM-yw-OZQ">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="101" id="BCw-Iu-AlK"/>
+                                    <constraint firstAttribute="width" constant="124" id="b95-6R-dEg"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mountains" translatesAutoresizingMaskIntoConstraints="NO" id="mjL-aa-pSh">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="174" id="IDm-3Y-w1w"/>
+                                </constraints>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t3l-kA-Uvn">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="r1H-z5-Kjc"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="t3l-kA-Uvn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3nN-dH-l3a"/>
+                            <constraint firstItem="mJM-yw-OZQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="8u3-3T-NCL"/>
+                            <constraint firstItem="bDH-Xx-EMY" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="BE9-82-HX4"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="t3l-kA-Uvn" secondAttribute="bottom" id="ECj-XJ-8Pg"/>
+                            <constraint firstItem="mjL-aa-pSh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="IfY-Xj-7cJ"/>
+                            <constraint firstAttribute="trailing" secondItem="bDH-Xx-EMY" secondAttribute="trailing" id="MTQ-5B-cPg"/>
+                            <constraint firstItem="t3l-kA-Uvn" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="MzV-Gy-GwM"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mjL-aa-pSh" secondAttribute="bottom" id="Obz-C8-YQ2"/>
+                            <constraint firstItem="mJM-yw-OZQ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="X3f-Mj-XiO"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="bDH-Xx-EMY" secondAttribute="bottom" id="c7M-5k-ePx"/>
+                            <constraint firstItem="bDH-Xx-EMY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="gwC-3y-Clc"/>
+                            <constraint firstAttribute="trailing" secondItem="mjL-aa-pSh" secondAttribute="trailing" id="mp9-Yb-oVg"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="scrollView" destination="t3l-kA-Uvn" id="Ueu-7c-yNG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="Mountains" width="375" height="100"/>
+        <image name="Sky" width="375" height="667"/>
+        <image name="Sun" width="53" height="53"/>
+    </resources>
 </document>
